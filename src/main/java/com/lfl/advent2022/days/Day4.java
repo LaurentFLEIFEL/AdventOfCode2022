@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 @Slf4j
 @Service
 public class Day4 implements LinesConsumer {
-    public static final Pattern PATTERN = Pattern.compile("(?<from1>\\d+)-(?<to1>\\d+),(?<from2>\\d+)-(?<to2>\\d+)");
+    private static final Pattern PATTERN = Pattern.compile("(?<from1>\\d+)-(?<to1>\\d+),(?<from2>\\d+)-(?<to2>\\d+)");
     @Getter
     private int size;
     @Getter
