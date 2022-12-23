@@ -9,6 +9,10 @@ public record Point(int x, int y) {
         return new Point(x, y);
     }
 
+    public static Point ofRC(int row, int column) {
+        return new Point(row, column);
+    }
+
     public int distance1(Point other) {
         return Math.abs(x - other.x) + Math.abs(y - other.y);
     }
@@ -40,5 +44,17 @@ public record Point(int x, int y) {
 
     public Point translate(Point origin) {
         return Point.of(this.x - origin.x, this.y - origin.y);
+    }
+
+    public Point add(Point other) {
+        return Point.of(this.x + other.x, this.y + other.y);
+    }
+
+    public int row() {
+        return x;
+    }
+
+    public int column() {
+        return y;
     }
 }
