@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.collections.api.factory.Sets;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.set.MutableSet;
 import org.eclipse.collections.impl.collector.Collectors2;
 import org.eclipse.collections.impl.list.Interval;
@@ -34,7 +35,7 @@ public class Day15 implements LinesConsumer {
     private static int maxCoord = 4_000_000;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableSet<Sensor> sensors = lines.stream()
                 .map(Sensor::ofLine)
                 .collect(Collectors2.toSet());
@@ -57,10 +58,10 @@ public class Day15 implements LinesConsumer {
         MutableSet<Segment> edges = sensors.flatCollect(Sensor::getEdges);
 
         MutableSet<Point> eligiblePoints = edges.flatCollect(edge -> edges.reject(edge::equals)
-                .collect(edge::intersectWith)
-                .select(Optional::isPresent)
-                .flatCollect(Optional::get)
-        )
+                        .collect(edge::intersectWith)
+                        .select(Optional::isPresent)
+                        .flatCollect(Optional::get)
+                )
                 .select(point -> point.x() >= 0)
                 .select(point -> point.x() <= maxCoord)
                 .select(point -> point.y() >= 0)

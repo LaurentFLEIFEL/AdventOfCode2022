@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 public class Day13 implements LinesConsumer {
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Packet> packets = lines.stream()
                 .filter(line -> !line.isEmpty())
                 .map(Packet::ofLine)

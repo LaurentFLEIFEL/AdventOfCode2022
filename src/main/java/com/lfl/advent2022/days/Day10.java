@@ -12,14 +12,13 @@ import org.eclipse.collections.impl.factory.Lists;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.function.BiFunction;
 
 @Slf4j
 @Service
 public class Day10 implements LinesConsumer {
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Command> commands = lines.stream()
                 .map(Command::of)
                 .collect(Collectors2.toList());

@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 @Service
 public class Day20 implements LinesConsumer {
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         //use pair to keep original index because one number can appear several times - wtf
         MutableList<Pair<BigInteger, Integer>> encrypted = lines.stream()
                 .map(line -> new BigInteger(line, 10))

@@ -10,6 +10,7 @@ import org.eclipse.collections.api.RichIterable;
 import org.eclipse.collections.api.factory.Maps;
 import org.eclipse.collections.api.factory.Sets;
 import org.eclipse.collections.api.list.ImmutableList;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.map.MutableMap;
 import org.eclipse.collections.api.set.ImmutableSet;
 import org.eclipse.collections.api.set.MutableSet;
@@ -22,7 +23,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -44,7 +44,7 @@ public class Day16 implements LinesConsumer {
     private ImmutableList<Valve> importants;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         lines.forEach(Valve::of);
 
         importants = valves.select(valve -> valve.getRate() > 0).selectUnique().toImmutableList();

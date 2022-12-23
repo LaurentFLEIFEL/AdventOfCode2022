@@ -27,7 +27,7 @@ public class Day5 implements LinesConsumer {
     private boolean isFirstPart = false;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Deque<Character>> stacks = extractStacks(lines);
         MutableList<Procedure> procedures = extractProcedures(lines);
 

@@ -14,7 +14,6 @@ import org.eclipse.collections.impl.collector.Collectors2;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
@@ -30,7 +29,7 @@ public class Day19 implements LinesConsumer {
     private static final Pattern pattern = Pattern.compile("Blueprint (\\d+): Each ore robot costs (\\d+) ore. Each clay robot costs (\\d+) ore. Each obsidian robot costs (\\d+) ore and (\\d+) clay. Each geode robot costs (\\d+) ore and (\\d+) obsidian.");
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Blueprint> blueprints = lines.stream()
                 .map(Blueprint::of)
                 .collect(Collectors2.toList());

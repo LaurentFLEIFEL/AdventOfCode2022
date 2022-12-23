@@ -5,6 +5,7 @@ import com.lfl.advent2022.utils.Point;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.collections.api.factory.Sets;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.set.MutableSet;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,7 @@ public class Day8 implements LinesConsumer {
     private MutableSet<Point> visiblePoints;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         maxX = lines.size();
         maxY = lines.get(0).length();
 

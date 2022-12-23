@@ -4,6 +4,7 @@ import com.lfl.advent2022.LinesConsumer;
 import com.lfl.advent2022.utils.Point3;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.collections.api.factory.Sets;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.set.ImmutableSet;
 import org.eclipse.collections.api.set.MutableSet;
 import org.eclipse.collections.impl.collector.Collectors2;
@@ -11,7 +12,6 @@ import org.eclipse.collections.impl.list.Interval;
 import org.springframework.stereotype.Service;
 
 import java.util.IntSummaryStatistics;
-import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -32,7 +32,7 @@ public class Day18 implements LinesConsumer {
     );
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableSet<Point3> cubes = lines.stream()
                 .map(line -> line.split(","))
                 .map(split -> Point3.of(parseInt(split[0]), parseInt(split[1]), parseInt(split[2])))

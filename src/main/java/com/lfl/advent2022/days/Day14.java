@@ -4,6 +4,7 @@ import com.lfl.advent2022.LinesConsumer;
 import com.lfl.advent2022.utils.Point;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.collections.api.list.ImmutableList;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.set.MutableSet;
 import org.eclipse.collections.impl.collector.Collectors2;
 import org.eclipse.collections.impl.factory.Lists;
@@ -27,7 +28,7 @@ public class Day14 implements LinesConsumer {
     private int maxY;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableSet<Wall> walls = buildWalls(lines);
 
         maxY = walls.collect(Wall::yInterval)

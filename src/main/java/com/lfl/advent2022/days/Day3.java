@@ -14,8 +14,6 @@ import org.eclipse.collections.impl.factory.primitive.CharLists;
 import org.eclipse.collections.impl.factory.primitive.IntLists;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Slf4j
 @Service
 public class Day3 implements LinesConsumer {
@@ -26,7 +24,7 @@ public class Day3 implements LinesConsumer {
     private long sum2;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Rucksack> rucksacks = lines.stream()
                 .map(Rucksack::of)
                 .collect(Collectors2.toList());

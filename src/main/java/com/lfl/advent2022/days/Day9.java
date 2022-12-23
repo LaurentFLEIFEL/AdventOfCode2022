@@ -11,7 +11,6 @@ import org.eclipse.collections.impl.factory.Lists;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 
@@ -19,7 +18,7 @@ import java.util.stream.IntStream;
 @Service
 public class Day9 implements LinesConsumer {
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Move> moves = lines.stream()
                 .map(Move::of)
                 .collect(Collectors2.toList());

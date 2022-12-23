@@ -5,6 +5,7 @@ import com.lfl.advent2022.utils.Point;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.collections.api.factory.Maps;
 import org.eclipse.collections.api.factory.Sets;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.map.MutableMap;
 import org.eclipse.collections.api.set.MutableSet;
 import org.eclipse.collections.impl.collector.Collectors2;
@@ -24,7 +25,7 @@ public class Day12 implements LinesConsumer {
     private MutableMap<Point, Character> map;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         map = buildMap(lines);
 
         Point start = map.detect((p, c) -> c == 'S').getOne();
@@ -65,7 +66,7 @@ public class Day12 implements LinesConsumer {
             step++;
 
             MutableSet<Point> newVisited = visited.flatCollect(point -> adjacents.computeIfAbsent(point, this::findAdjacents)
-                            .reject(visited::contains)
+                    .reject(visited::contains)
             );
             if (newVisited.isEmpty()) {
                 return Integer.MAX_VALUE;

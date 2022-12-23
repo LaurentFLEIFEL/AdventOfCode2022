@@ -3,9 +3,8 @@ package com.lfl.advent2022.days;
 import com.lfl.advent2022.LinesConsumer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.collections.api.list.MutableList;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Slf4j
 @Service
@@ -17,7 +16,7 @@ public class Day6 implements LinesConsumer {
     private int startOfMessage;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         String line = lines.get(0);
 
         startOfPacket = startOfPacket(line);

@@ -24,7 +24,7 @@ public class Day7 implements LinesConsumer {
     private long size;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         buildTree(lines);
 
         sum = ROOT.listDirectories()

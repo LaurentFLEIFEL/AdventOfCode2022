@@ -5,11 +5,11 @@ import com.lfl.advent2022.utils.StringHelper;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.impl.collector.Collectors2;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,7 +20,7 @@ public class Day21 implements LinesConsumer {
     private static Map<String, Expression> expressions;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         expressions = lines.stream()
                 .map(Expression::of)
                 .collect(Collectors2.toMap(

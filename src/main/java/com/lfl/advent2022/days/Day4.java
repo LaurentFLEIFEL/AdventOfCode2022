@@ -10,7 +10,6 @@ import org.eclipse.collections.impl.list.Interval;
 import org.eclipse.collections.impl.tuple.Tuples;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,7 +23,7 @@ public class Day4 implements LinesConsumer {
     private int size2;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Pair<Interval, Interval>> assignments = lines.stream()
                 .map(Day4::lineToPair)
                 .collect(Collectors2.toList());

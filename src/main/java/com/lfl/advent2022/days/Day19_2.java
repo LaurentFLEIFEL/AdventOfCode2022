@@ -2,6 +2,7 @@ package com.lfl.advent2022.days;
 
 import com.lfl.advent2022.LinesConsumer;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.collections.api.list.MutableList;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Day19_2 implements LinesConsumer {
     private int maxGeodes, output;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         blueprints = new ArrayList<>();
         output = byPart(0, 1);
         lines.forEach(this::constructBlueprint);
@@ -38,17 +39,17 @@ public class Day19_2 implements LinesConsumer {
 
         blueprints.add(
                 new int[][] {
-                        new int[] {parseInt(matcher.group(2)), 0, 0},
-                        new int[] {parseInt(matcher.group(3)), 0, 0},
-                        new int[] {parseInt(matcher.group(4)), parseInt(matcher.group(5)), 0},
-                        new int[] {parseInt(matcher.group(6)), 0, parseInt(matcher.group(7))},
+                        new int[] { parseInt(matcher.group(2)), 0, 0 },
+                        new int[] { parseInt(matcher.group(3)), 0, 0 },
+                        new int[] { parseInt(matcher.group(4)), parseInt(matcher.group(5)), 0 },
+                        new int[] { parseInt(matcher.group(6)), 0, parseInt(matcher.group(7)) },
                 });
     }
 
     private void findBlueprintScores() {
         for (int i = 0; i < byPart(blueprints.size(), 3); i++) {
             findMaxRobots(blueprints.get(i));
-            findMaxGeodes(blueprints.get(i), new int[4], new int[] {1, 0, 0, 0}, byPart(24, 32));
+            findMaxGeodes(blueprints.get(i), new int[4], new int[] { 1, 0, 0, 0 }, byPart(24, 32));
             System.out.println("id = " + (i + 1) + ", geodes = " + maxGeodes);
             if (isPartOne()) output += (i + 1) * maxGeodes;
             else output *= maxGeodes;

@@ -7,6 +7,7 @@ import org.apache.commons.collections4.IteratorUtils;
 import org.eclipse.collections.api.bag.MutableBag;
 import org.eclipse.collections.api.factory.Maps;
 import org.eclipse.collections.api.factory.Sets;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.map.MutableMap;
 import org.eclipse.collections.api.set.MutableSet;
 import org.eclipse.collections.impl.factory.Lists;
@@ -38,7 +39,7 @@ public class Day23 implements LinesConsumer {
 
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableSet<Point> elves = retrieveElves(lines);
         log.info("elves = {}", elves.size());
 

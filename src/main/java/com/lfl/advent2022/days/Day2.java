@@ -8,7 +8,6 @@ import org.eclipse.collections.impl.collector.Collectors2;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Slf4j
 @Service
@@ -20,7 +19,7 @@ public class Day2 implements LinesConsumer {
     private long totalScore2;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Round> rounds = lines.stream()
                 .map(Round::of)
                 .collect(Collectors2.toList());

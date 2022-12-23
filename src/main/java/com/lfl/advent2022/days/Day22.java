@@ -6,6 +6,7 @@ import com.lfl.advent2022.utils.StringHelper;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.collections.api.factory.Maps;
+import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.list.primitive.ImmutableIntList;
 import org.eclipse.collections.impl.collector.Collectors2;
 import org.eclipse.collections.impl.utility.ArrayIterate;
@@ -34,7 +35,7 @@ public class Day22 implements LinesConsumer {
     private static final Map<Position, Position> edgeMapping = Maps.mutable.empty();
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         lines.stream()
                 .takeWhile(s -> !s.isEmpty())
                 .collect(Collectors2.toList())

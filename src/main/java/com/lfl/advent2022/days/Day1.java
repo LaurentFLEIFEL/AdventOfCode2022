@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class Day1 implements LinesConsumer {
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<ElfCarry> elfCarries = parseInput(lines);
 
         long max = elfCarries.collectLong(ElfCarry::total)

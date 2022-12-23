@@ -14,7 +14,6 @@ import org.eclipse.collections.impl.factory.Lists;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
-import java.util.List;
 import java.util.function.UnaryOperator;
 import java.util.stream.IntStream;
 
@@ -26,7 +25,7 @@ public class Day11 implements LinesConsumer {
     private static BigInteger lcm;
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
     }
 
     public void doPart1() {

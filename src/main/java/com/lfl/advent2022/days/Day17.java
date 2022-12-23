@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
@@ -58,7 +57,7 @@ public class Day17 implements LinesConsumer {
 
 
     @Override
-    public void consume(List<String> lines) {
+    public void consume(MutableList<String> lines) {
         MutableList<Jet> jetPattern = ArrayIterate.collect(lines.get(0).split(""), Jet::of);
 
         Iterator<Jet> jetIterator = IteratorUtils.loopingListIterator(jetPattern);
