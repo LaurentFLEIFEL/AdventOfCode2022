@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,7 +36,7 @@ class Day7Test {
 
         Day7 day7 = new Day7();
 
-        day7.consume(lines.lines().collect(Collectors.toList()));
+        day7.consume(lines.lines().collect(Collectors2.toList()));
 
         assertThat(day7.getSum()).isEqualTo(95437);
         assertThat(day7.getSize()).isEqualTo(24933642);

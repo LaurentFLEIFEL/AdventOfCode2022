@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 class Day10Test {
     @Test
@@ -157,7 +156,7 @@ class Day10Test {
 
         Day10 day10 = new Day10();
 
-        day10.consume(lines.lines().collect(Collectors.toList()));
+        day10.consume(lines.lines().collect(Collectors2.toList()));
 
         //assertThat(day10.getSum()).isEqualTo(95437);
     }

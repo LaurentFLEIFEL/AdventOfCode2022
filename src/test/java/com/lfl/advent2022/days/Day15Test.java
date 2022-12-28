@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 class Day15Test {
 
@@ -28,6 +27,6 @@ class Day15Test {
         day15.setYToDetect(10);
         Day15.setMaxCoord(20);
 
-        day15.consume(lines.lines().collect(Collectors.toList()));
+        day15.consume(lines.lines().collect(Collectors2.toList()));
     }
 }

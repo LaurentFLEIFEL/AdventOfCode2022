@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 class Day9Test {
     @Test
@@ -19,7 +18,7 @@ class Day9Test {
 
         Day9 day9 = new Day9();
 
-        day9.consume(lines.lines().collect(Collectors.toList()));
+        day9.consume(lines.lines().collect(Collectors2.toList()));
 
         //assertThat(day9.getSum()).isEqualTo(95437);
     }
@@ -38,7 +37,7 @@ class Day9Test {
 
         Day9 day9 = new Day9();
 
-        day9.consume(lines.lines().collect(Collectors.toList()));
+        day9.consume(lines.lines().collect(Collectors2.toList()));
 
         //assertThat(day9.getSum()).isEqualTo(95437);
     }

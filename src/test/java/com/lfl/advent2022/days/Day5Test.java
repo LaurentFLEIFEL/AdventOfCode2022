@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -23,7 +22,7 @@ class Day5Test {
         Day5 day5 = new Day5();
 
         day5.setFirstPart(true);
-        day5.consume(lines.lines().collect(Collectors.toList()));
+        day5.consume(lines.lines().collect(Collectors2.toList()));
 
         assertThat(day5.getMessage()).isEqualTo("CMZ");
     }
@@ -44,7 +43,7 @@ class Day5Test {
         Day5 day5 = new Day5();
 
         day5.setFirstPart(false);
-        day5.consume(lines.lines().collect(Collectors.toList()));
+        day5.consume(lines.lines().collect(Collectors2.toList()));
 
         assertThat(day5.getMessage()).isEqualTo("MCD");
     }

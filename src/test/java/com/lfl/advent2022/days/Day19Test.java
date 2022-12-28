@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 class Day19Test {
 
@@ -14,7 +13,7 @@ class Day19Test {
 
         Day19 day19 = new Day19();
 
-        day19.consume(lines.lines().collect(Collectors.toList()));
+        day19.consume(lines.lines().collect(Collectors2.toList()));
     }
 
     @Test
@@ -24,7 +23,7 @@ class Day19Test {
 
         Day19 day19 = new Day19();
 
-        day19.consume(lines.lines().collect(Collectors.toList()));
+        day19.consume(lines.lines().collect(Collectors2.toList()));
     }
 
     @Test
@@ -34,7 +33,7 @@ class Day19Test {
 
         Day19 day19 = new Day19();
 
-        day19.consume(lines.lines().collect(Collectors.toList()));
+        day19.consume(lines.lines().collect(Collectors2.toList()));
     }
 
     @Test
@@ -57,7 +56,7 @@ class Day19Test {
 
         Day19 day19 = new Day19();
 
-        day19.consume(lines.lines().collect(Collectors.toList()));
+        day19.consume(lines.lines().collect(Collectors2.toList()));
     }
 
     @Test
@@ -67,7 +66,7 @@ class Day19Test {
 
         Day19 day19 = new Day19();
 
-        day19.consume(lines.lines().collect(Collectors.toList()));
+        day19.consume(lines.lines().collect(Collectors2.toList()));
     }
 
     @Test
@@ -77,6 +76,6 @@ class Day19Test {
 
         Day19 day19 = new Day19();
 
-        day19.consume(lines.lines().collect(Collectors.toList()));
+        day19.consume(lines.lines().collect(Collectors2.toList()));
     }
 }

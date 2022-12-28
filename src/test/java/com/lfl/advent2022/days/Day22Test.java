@@ -1,8 +1,7 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Collectors;
 
 class Day22Test {
     @Test
@@ -25,6 +24,6 @@ class Day22Test {
 
         Day22 day22 = new Day22();
         Day22.setEdgeSize(4);
-        day22.consume(lines.lines().collect(Collectors.toList()));
+        day22.consume(lines.lines().collect(Collectors2.toList()));
     }
 }

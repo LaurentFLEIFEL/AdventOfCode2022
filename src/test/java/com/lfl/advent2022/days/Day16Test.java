@@ -1,10 +1,10 @@
 package com.lfl.advent2022.days;
 
+import org.eclipse.collections.impl.collector.Collectors2;
 import org.junit.jupiter.api.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 class Day16Test {
 
@@ -25,7 +25,7 @@ class Day16Test {
 
         Day16 day16 = new Day16();
 
-        day16.consume(lines.lines().collect(Collectors.toList()));
+        day16.consume(lines.lines().collect(Collectors2.toList()));
     }
 
     @Test
