@@ -22,7 +22,7 @@ import java.util.Set;
 @SpringBootApplication
 @Slf4j
 public class AdventApplication implements CommandLineRunner {
-    private static final String day = "24";
+    private static final String day = "25";
     private static final String input = "day" + day + ".txt";
     private static final String inputOverride = null;
 
